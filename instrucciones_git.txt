@@ -1,0 +1,13 @@
+comandos basicos para trabajar con git:
+
+1) clonamos el proyecto utilizando el git clone: git clone https://github.com/marcosg91/catalogo.git
+
+2) podemos ver el estado de un proyecto usando git status
+
+3) para agregar cambios git add nombre_archivo1 nombre_archivo2 o bien git add. (con esto agregamos todos los archivos)
+
+4) commiteamos los cambios git commit git commit -m "un mensaje"
+
+5) subimos los archivos git push 
+
+6) traemos cambios remotos git pull
