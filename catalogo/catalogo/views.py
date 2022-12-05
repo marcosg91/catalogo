@@ -1,7 +1,7 @@
 from django.shortcuts import render 
 
 def inicio(request):
-    template_name = "index.html"
+    template_name='index.html'
     contexto = {
         'nombre': "Marcos"
     }
