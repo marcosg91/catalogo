@@ -73,8 +73,12 @@
                 <h1 class="fw-light">catalogo de productos</h1>
                 <p class="lead text-muted">el mejor sitio para hacer tus compras</p>
                 <p>
+                    {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="btn btn-secondary my-1">cerrar sesion</a>
+                {% else %}
                 <a href="{% url 'login' %}" class="btn btn-secondary my-1">iniciar sesion</a>
                 <a href="#" class="btn btn-secondary my-2">registrarme</a>
+                {% endif %}
                 </p>
             </div>
             </div>
