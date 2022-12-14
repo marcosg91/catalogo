@@ -1,6 +1,8 @@
 from django.shortcuts import render 
+from django.views.generic.edit import CreateView
+from .forms import ProductoForm
 
-from products.models import Producto
+from .models import Producto
 def admin_listado_productos(request):
     template_name='productos/listado.html'
 
@@ -8,3 +10,10 @@ def admin_listado_productos(request):
         'productos': Producto.objects.all()
     }
     return render( request, template_name, contexto)
+
+# vista que nos va a permitir crear algo 
+class NuevoProducto(CreateView):
+    model= Producto
+    template_name= "productos/nuevo_producto.html"
+    form_class= ProductoForm 
+
