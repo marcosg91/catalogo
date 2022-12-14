@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+
+{% block contenido%}
+<div class="row">
+    <div class="col">
+        <button type="button" class="btn btn-success">nuevo producto</button>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        lista de productos
+    </div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">producto</th>
+                    <th scope="col">precio</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in productos %}
+                    <tr>
+                        <th scope="row">{{p.id}}</th>
+                        <td>{{p.nombre}}</td>
+                        <td>${{p.precio}}</td>
+                        <td>
+                            <button type="button" class="btn btn-warning">editar</button>
+                            <button type="button" class="btn btn-danger">eliminar</button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock contenido%}
