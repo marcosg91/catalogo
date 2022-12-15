@@ -15,15 +15,15 @@ def inicio(request):
     descripcion = "pantalon azul"
     )
     """
-    productos = Producto.objects.all()
-    print(productos)
+   
     contexto = {
-        'productos': productos
+        'productos': Producto.objects.filter(activo=True)
     }
     return render( request, template_name, contexto)
-
+"""
 def login(request):
     print(request.method == "POST")
     print("entre a login")
     print(request.POST.get("password", None))
     return render(request, "login.html", {})
+"""

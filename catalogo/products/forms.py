@@ -7,4 +7,4 @@ from.models import Producto
 class ProductoForm(forms.ModelForm):
     class Meta:
         model= Producto # a partir de este modelo
-        fields=["nombre", "descripcion", "precio"] #que incluya estos campos
+        fields=["nombre", "descripcion", "precio", "activo"] #que incluya estos campos
