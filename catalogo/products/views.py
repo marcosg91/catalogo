@@ -1,8 +1,8 @@
 from django.shortcuts import render 
 from django.views.generic.edit import CreateView
 from django.urls import reverse 
-from .forms import ProductoForm
 
+from .forms import ProductoForm
 from .models import Producto
 def admin_listado_productos(request):
     template_name='productos/listado.html'

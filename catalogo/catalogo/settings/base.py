@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import os 
 
 from pathlib import Path
 
@@ -76,10 +77,10 @@ from decouple import config
 DATABASES = {
     'default': {
         'ENGINE': "mssql",
-        'NAME':config ["NAME"],
-        'USER': config ["USER"],
-        'PASSWORD': config ["PASSWORD"],
-        'HOST':config ["HOST"],
+        'NAME':config ("NAME"),
+        'USER': config ("USER"),
+        'PASSWORD': config ("PASSWORD"),
+        'HOST':config ("HOST"),
         'OPTIONS':{
             'driver':'ODBC Driver 17 for SQL Server'
         }
@@ -109,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-AR'
 
 TIME_ZONE = 'UTC'
 
