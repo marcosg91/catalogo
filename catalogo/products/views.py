@@ -1,6 +1,6 @@
 from django.shortcuts import render 
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse 
 
 from .forms import ProductoForm
@@ -36,3 +36,10 @@ class NuevoProducto(CreateView):
     def get_success_url(self):
         return reverse("productos:admin_listado_productos")
 
+class EditarProducto(UpdateView):
+    model= Producto
+    template_name= "productos/editar.html"
+    form_class= ProductoForm 
+
+    def get_success_url(self):
+        return reverse("productos:admin_listado_productos")
