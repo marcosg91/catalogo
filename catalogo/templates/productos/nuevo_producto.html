@@ -1,8 +1,6 @@
 {% extends 'base/base.html' %}
 
 {% block contenido%}
-
-        {{producto.nombre}}
       
         <form method="POST" enctype="multipart/form-data">{% csrf_token %}
             {{form.as_p}}
