@@ -95,11 +95,12 @@
                                             <a class="nav-link active" aria-current="page"
                                                 href="{% url 'inicio' %}">inicio</a>
                                         </li>
+                                        {% if user.es_administrador %}
                                         <li class="nav-item">
-                                            <a class="nav-link"
-                                                href="{% url 'productos:admin_listado_productos' %}">productos</a>
-                                            <!--
-                                </li>
+                                            <a class="nav-link" href="{% url 'productos:admin_listado_productos' %}">productos</a>
+                                        </li>
+                                        {% endif %}
+                                <!--
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown

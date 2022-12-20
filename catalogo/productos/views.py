@@ -3,6 +3,8 @@ from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse 
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 from .forms import ProductoForm
 from .models import Producto, MeGusta
@@ -15,11 +17,11 @@ from .models import Producto, MeGusta
     return render( request, template_name, contexto)"""
 
 # vista que nos va a permitir crear algo 
-class AdminListadoProductos (ListView):
+class AdminListadoProductos (LoginRequiredMixin, ListView):
     template_name= "productos/listado.html"
     model= Producto
     context_object_name= "productos" 
-    paginate_by= 10
+    paginate_by= 2
 
     def get_queryset(self):
         productos = Producto.objects.all()

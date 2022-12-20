@@ -1,6 +1,9 @@
 from django.shortcuts import render 
+from django.contrib.auth.decorators import login_required
 
-from products.models import Producto
+from productos.models import Producto
+
+# @login_required
 def inicio(request):
     template_name='index.html'
     
