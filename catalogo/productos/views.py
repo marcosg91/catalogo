@@ -45,12 +45,12 @@ class NuevoProducto(CreateView):
         #context["producto"]=Producto.objects.get(id=5)
         return context
 
-    """
+    
     def form_valid(self, form):
         f = form.save(commit=False)
         f.usuario_id = self.request.user.id
-        return super(NuevoProducto, self).form_valid()
-    """
+        return super(NuevoProducto, self).form_valid(form)
+    
 
 class EditarProducto(UpdateView):
     model= Producto

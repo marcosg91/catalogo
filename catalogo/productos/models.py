@@ -23,7 +23,9 @@ class Producto(models.Model):
 
 
    # ficha = models.OneToOneField(Ficha) en el caso de requerir que un producto tenga una sola ficha y esa ficha tenga un solo producto
-
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True, related_name="productos", blank=True)
+   
+   
     def __str__(self):
         return self.nombre
 

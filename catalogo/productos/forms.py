@@ -10,11 +10,11 @@ class ProductoForm(forms.ModelForm):
         fields=["nombre", "descripcion", "precio", "activo", "imagen", "categoria", "categoria2"] #que incluya estos campos
 
 
-def clean_precio(self):
-    precio = self.cleaned_data ["precio"]
-    if precio <= 0:
-        raise forms.ValidationError ("el precio debe ser un numero positivo")
-    return precio 
+    def clean_precio(self):
+        precio = self.cleaned_data ["precio"]
+        if precio <= 0:
+            raise forms.ValidationError ("el precio debe ser un numero positivo")
+        return precio 
 
 
     
