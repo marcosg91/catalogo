@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from utils.mixins import IsAdminMixin
 
 from .forms import ProductoForm
 from .models import Producto, MeGusta
@@ -17,7 +18,7 @@ from .models import Producto, MeGusta
     return render( request, template_name, contexto)"""
 
 # vista que nos va a permitir crear algo 
-class AdminListadoProductos (LoginRequiredMixin, ListView):
+class AdminListadoProductos (LoginRequiredMixin, IsAdminMixin, ListView):
     template_name= "productos/listado.html"
     model= Producto
     context_object_name= "productos" 
